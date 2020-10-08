@@ -2,8 +2,8 @@ package boardgame;
 
 public abstract class Piece {
 
-	protected Position position; 	//COMPOSIÇÃO DE OBJETOS: 'UMA PEÇA TEM -UMA- POSIÇÃO 
-	
+	protected Position position; 	//POSIÇÃO DA PROPRIA PEÇA; COMPOSIÇÃO DE OBJETOS: 'UMA PEÇA TEM -UMA- POSIÇÃO 
+
 	private Board board;
 	
 	public Piece(Board board) {
@@ -17,7 +17,7 @@ public abstract class Piece {
 	
 	public abstract boolean[][] possibleMoves();
 	
-	public boolean possibleMoves(Position position) {
+	public boolean possibleMoves(Position position) {			//VERIFICA SE A PEÇA PODE MUDAR PARA A POSIÇÃO INDICADA
 		return possibleMoves()[position.getRow()][position.getColumn()];
 	}
 	
