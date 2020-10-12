@@ -23,8 +23,7 @@ public class Board {
 		return columns;
 	}
 
-	
-//	---------------------------------------------------------------
+//	----------------------------------------------------------------------------------------------------------
 		
 	public Piece piece(int row, int column) {		//RETORNA UMA PIECE(PEÇA) NA LINHA E COLUNA INDICADA
 		if (!positionExists(row, column)) {
@@ -39,9 +38,8 @@ public class Board {
 		}
 		return pieces[position.getRow()][position.getColumn()];
 	}
-	
-	
-//	---------------------------------------------------------------------------
+		
+//	----------------------------------------------------------------------------------------------------------
 	
 	public void placePiece(Piece piece, Position position) {		//ADICIONANDO UMA PEÇA NO TABULEIRO
 		if (thereIsAPiece(position)) {
@@ -50,9 +48,6 @@ public class Board {
 		pieces[position.getRow()][position.getColumn()] = piece;
 		piece.position = position;
 	}
-	
-	
-//	------------------------------------------------------------------------
 	
 	public Piece removePiece(Position position) {
 		if (!positionExists(position)) {
@@ -67,9 +62,7 @@ public class Board {
 		return aux;
 	}
 	
-	
-//	--------------------------------------------------------------------------------
-	
+//	------------------------- METODOS DE VERIFICAÇÃO -------------------------------------------------------
 	
 	private boolean positionExists(int row, int column) {
 		return row >= 0 && row < rows && column >= 0 && column < columns;
@@ -78,8 +71,6 @@ public class Board {
 	public boolean positionExists(Position position) {
 		return positionExists(position.getRow(), position.getColumn());
 	}
-	
-//	--------------------------
 	
 	public boolean thereIsAPiece(Position position) { 		// VERIFICA SE EXISTE UMA PEÇA NA POSIÃO INDICADA
 		if (!positionExists(position)) {
